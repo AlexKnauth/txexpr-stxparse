@@ -7,3 +7,7 @@
     "txexpr"
     ))
 
+(define build-deps
+  '("rackunit-lib"
+    ))
+
