@@ -34,7 +34,9 @@
 
 (define-syntax-class (datum=? dat)
     #:attributes []
-    [pattern stx #:when (equal? (syntax->datum #'stx) dat)])
+    [pattern stx
+             #:fail-unless (equal? (syntax->datum #'stx) dat)
+             (format "expected ~s" dat)])
 
 (begin-for-syntax
   (define (make-txexpr-pattern-expander tag-symbol)
